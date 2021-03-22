@@ -1,27 +1,20 @@
 # MyhomeList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
+Build an Angular application to display a list of properties from the json file. The list items should show the following data:
 
-## Development server
+- Main photo
+- Address
+- Price
+- Beds
+- Baths
+- Agent logo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The list items should feature two different colour buttons - ‘view gallery’ and ‘view brochure’
 
-## Code scaffolding
+Clicking on ‘view brochure’ should go to a new page which just displays the raw json object Clicking on ‘view gallery’ should open a page which displays the photos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The list items should be responsive.
 
-## Build
+The user should be able to sort and filter the list by price.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Create a git repository for your project and send a link
