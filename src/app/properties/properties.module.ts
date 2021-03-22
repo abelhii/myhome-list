@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PropertyCardComponent } from './property-card/property-card.component';
 import { PropertiesComponent } from './properties.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [PropertiesComponent, PropertyCardComponent],
-  imports: [CommonModule],
+  declarations: [PropertiesComponent],
+  imports: [CommonModule, SharedModule],
 })
 export class PropertiesModule {}

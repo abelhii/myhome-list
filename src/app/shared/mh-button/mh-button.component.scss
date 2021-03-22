@@ -1,0 +1,25 @@
+@import "colors";
+
+.button {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 4px;
+  color: white;
+  background-color: $color-primary;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+  }
+  &:focus {
+    filter: brightness(0.95);
+  }
+
+  // colors
+
+  &.green {
+    background-color: $color-green;
+  }
+}

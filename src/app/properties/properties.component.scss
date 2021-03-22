@@ -1,2 +1,87 @@
-.container {
+@import "colors";
+
+.properties {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem;
+
+  .card {
+    height: 100%;
+    max-width: 300px;
+
+    .info {
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        font-style: normal;
+
+        .address {
+          color: $color-primary;
+        }
+
+        .extra-text {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .logo {
+        }
+      }
+
+      .photo {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .properties {
+    gap: 2rem;
+    margin: 4rem;
+
+    .card {
+      max-width: none;
+
+      .info {
+        display: flex;
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 1rem;
+          font-style: normal;
+
+          .address {
+            color: $color-primary;
+          }
+        }
+
+        .photo {
+          height: 300px;
+          max-width: 50%;
+        }
+      }
+
+      .actions {
+        gap: 1rem;
+        flex-direction: column;
+
+        :nth-child(n) {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

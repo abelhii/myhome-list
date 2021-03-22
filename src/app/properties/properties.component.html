@@ -1,4 +1,31 @@
-<div class="container">
-  <app-property-card></app-property-card>
-  <!-- <div class="properties-list" *ngFor=""></div> -->
+<div class="properties">
+  <app-mh-card class="card" *ngFor="let p of properties; let i = index">
+    <!-- {{ p | json }} -->
+    <div class="info">
+      <img
+        class="photo"
+        [src]="p.MainPhoto"
+        (error)="updateUrl($event, i)"
+        alt="main photo"
+      />
+      <div class="text">
+        <h2 class="price">{{ p.Price | currency }}</h2>
+        <span class="address"> {{ p.DisplayAddress }}</span>
+        <div class="extra-text">
+          <span>{{ p.BedsString }}</span>
+          <span>{{ p.BathString }}</span>
+        </div>
+        <img
+          class="logo"
+          [src]="p.GroupLogoUrl"
+          (error)="updateUrl($event, i)"
+          alt="group logo"
+        />
+      </div>
+    </div>
+    <div footer class="actions">
+      <app-mh-button>View Brochure</app-mh-button>
+      <app-mh-button btnColor="green">View Gallery</app-mh-button>
+    </div>
+  </app-mh-card>
 </div>
