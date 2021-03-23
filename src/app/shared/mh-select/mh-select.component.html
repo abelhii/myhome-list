@@ -1,0 +1,5 @@
+<select (ngModelChange)="onSelect($event)" [(ngModel)]="value">
+  <option [value]="option" *ngFor="let option of options">
+    {{ !isCurrency ? option : (option | currency: "EUR":"symbol":"1.0-0") }}
+  </option>
+</select>

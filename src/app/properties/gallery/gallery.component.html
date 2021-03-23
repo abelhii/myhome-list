@@ -1,0 +1,14 @@
+<div class="header">
+  <app-mh-button routerLink="/properties">Back to List</app-mh-button>
+  <h2>{{ address }}</h2>
+</div>
+<div class="photos">
+  <div *ngFor="let photo of photos; let i = index">
+    <img
+      alt="gallery image"
+      class="photo"
+      [src]="photo"
+      (error)="updateUrl($event, i)"
+    />
+  </div>
+</div>

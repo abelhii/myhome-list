@@ -1,26 +1,14 @@
 @import "colors";
 
 .card {
-  display: grid;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 30%);
-
-  .footer {
-    padding: 1rem;
-    border-top: 1px solid $color-border;
-  }
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid $color-border;
 }
 
 @media (min-width: 1024px) {
   .card {
-    grid-template-columns: 2fr 0.5fr;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px 1px rgb(0 0 0 / 30%);
-
-    .footer {
-      display: flex;
-      border-top: none;
-      border-left: 1px solid $color-border;
-    }
+    flex-direction: row;
   }
 }

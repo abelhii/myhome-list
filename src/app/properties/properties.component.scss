@@ -2,84 +2,121 @@
 
 .properties {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   margin: 2rem;
+  justify-content: center;
 
-  .card {
-    height: 100%;
-    max-width: 300px;
+  .filter {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
 
-    .info {
-      .text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 1rem;
-        font-style: normal;
+    .filter-actions {
+      align-items: flex-end;
+    }
 
-        .address {
-          color: $color-primary;
-        }
+    .price-sort {
+      cursor: pointer;
+    }
 
-        .extra-text {
-          display: flex;
-          gap: 1rem;
-        }
+    .price-range {
+      display: grid;
+      gap: 0.5rem;
 
-        .logo {
-        }
-      }
-
-      .photo {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
+      label {
+        color: $color-grey;
+        font-size: 12px;
       }
     }
 
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    ::ng-deep.reset > .button {
+      width: 40px;
+    }
+  }
+
+  .cards {
+    display: grid;
+    gap: 2rem;
+
+    .card {
+      position: relative;
+      height: 100%;
+      max-width: 400px;
+
+      .info {
+        .photo {
+          height: 200px;
+          width: 100%;
+          object-fit: cover;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+
+        .logo {
+          position: absolute;
+          height: 64px;
+          padding: 1rem;
+          object-fit: scale-down;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding: 2rem;
+
+          .price {
+            margin: 0;
+          }
+
+          .address,
+          .extra {
+            line-height: 3ch;
+            color: $color-grey;
+          }
+        }
+
+        .actions {
+          height: 100%;
+          align-items: center;
+          justify-content: start;
+        }
+      }
     }
   }
 }
 
 @media (min-width: 1024px) {
   .properties {
-    gap: 2rem;
     margin: 4rem;
 
-    .card {
-      max-width: none;
+    .cards {
+      .card {
+        max-width: none;
 
-      .info {
-        display: flex;
-
-        .text {
+        .info {
           display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 1rem;
-          font-style: normal;
 
-          .address {
-            color: $color-primary;
+          .photo {
+            height: 300px;
+            width: 500px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 10px;
           }
-        }
 
-        .photo {
-          height: 300px;
-          max-width: 50%;
-        }
-      }
+          .content {
+            width: 500px;
 
-      .actions {
-        gap: 1rem;
-        flex-direction: column;
-
-        :nth-child(n) {
-          width: 100%;
+            .price {
+              margin-top: 1rem;
+            }
+            .logo {
+              padding-top: 1em;
+              object-position: left;
+            }
+          }
         }
       }
     }

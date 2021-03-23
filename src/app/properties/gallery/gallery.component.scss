@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 2rem;
+
+  app-hm-button {
+    width: 200px;
+  }
+}
+
+.photos {
+  display: grid;
+  gap: 2rem;
+  margin: 2rem;
+  justify-content: center;
+
+  .photo {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .photos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

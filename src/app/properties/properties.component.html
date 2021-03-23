@@ -1,31 +1,100 @@
 <div class="properties">
-  <app-mh-card class="card" *ngFor="let p of properties; let i = index">
-    <!-- {{ p | json }} -->
-    <div class="info">
-      <img
-        class="photo"
-        [src]="p.MainPhoto"
-        (error)="updateUrl($event, i)"
-        alt="main photo"
-      />
-      <div class="text">
-        <h2 class="price">{{ p.Price | currency }}</h2>
-        <span class="address"> {{ p.DisplayAddress }}</span>
-        <div class="extra-text">
-          <span>{{ p.BedsString }}</span>
-          <span>{{ p.BathString }}</span>
-        </div>
+  <!-- Filter -->
+  <div class="filter">
+    <strong>Price Filter</strong>
+
+    <!-- Filter price range -->
+    <div class="filter-actions mh-flex">
+      <div class="price-range">
+        <label for="min">Min Price</label>
+        <app-mh-select
+          id="min"
+          [isCurrency]="true"
+          [options]="priceOptions"
+          (change)="filterList()"
+          [(ngModel)]="minPrice"
+        ></app-mh-select>
+      </div>
+
+      <div class="price-range">
+        <label for="max">Max Price</label>
+        <app-mh-select
+          id="max"
+          [isCurrency]="true"
+          [options]="priceOptions"
+          (change)="filterList()"
+          [(ngModel)]="maxPrice"
+        ></app-mh-select>
+      </div>
+
+      <app-mh-button class="price-sort" (click)="sortByPrice()">
+        <div *ngIf="order === 0">Sort by price</div>
+        <span *ngIf="order === 1">
+          <i class="fas fa-chevron-up"></i> Ascending
+        </span>
+        <span *ngIf="order === 2">
+          <i class="fas fa-chevron-down"></i> Descending
+        </span>
+      </app-mh-button>
+
+      <app-mh-button class="reset" (click)="resetFilter()">
+        Reset
+      </app-mh-button>
+    </div>
+  </div>
+
+  <!-- Empty list -->
+  <h1 *ngIf="filteredList.length === 0">
+    Sorry there are no properties listed within that range at the moment.
+  </h1>
+
+  <!-- Property Cards -->
+  <div class="cards" *ngIf="filteredList.length > 0">
+    <app-mh-card class="card" *ngFor="let p of filteredList; let i = index">
+      <div class="info">
         <img
+          alt="group logo"
           class="logo"
           [src]="p.GroupLogoUrl"
-          (error)="updateUrl($event, i)"
-          alt="group logo"
+          (error)="updateUrl($event, i, false)"
         />
+        <img
+          alt="main photo"
+          class="photo"
+          [src]="p.MainPhoto"
+          (error)="updateUrl($event, i, true)"
+        />
+        <div class="content">
+          <h2 class="price">
+            {{
+              isNumber(p.Price)
+                ? (p.Price | currency: "EUR":"symbol":"1.0-0")
+                : p.Price
+            }}
+          </h2>
+          <span class="address"> {{ p.DisplayAddress }}</span>
+          <div class="mh-flex extra">
+            <span *ngIf="p.BedsString">
+              <i class="fas fa-bed"></i> {{ p.BedsString }}
+            </span>
+            <span *ngIf="p.BathString">
+              <i class="fas fa-bath"></i> {{ p.BathString }}
+            </span>
+          </div>
+
+          <div class="actions mh-flex">
+            <app-mh-button [routerLink]="['brochure', p.PropertyId]">
+              View Brochure
+            </app-mh-button>
+            <app-mh-button
+              [routerLink]="['gallery', p.PropertyId]"
+              btnColor="green"
+            >
+              View Gallery
+            </app-mh-button>
+          </div>
+        </div>
       </div>
-    </div>
-    <div footer class="actions">
-      <app-mh-button>View Brochure</app-mh-button>
-      <app-mh-button btnColor="green">View Gallery</app-mh-button>
-    </div>
-  </app-mh-card>
+    </app-mh-card>
+  </div>
 </div>

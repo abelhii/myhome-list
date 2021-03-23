@@ -4,17 +4,19 @@
   display: flex;
   place-items: center;
   justify-content: center;
-  padding: 1rem;
-  border-radius: 4px;
+  padding: 8px;
+  width: 88px;
+  border-radius: 2px;
   color: white;
   background-color: $color-primary;
+  font-size: 12px;
 
   &:hover {
     cursor: pointer;
-    filter: brightness(1.1);
+    filter: brightness(1.03);
   }
-  &:focus {
-    filter: brightness(0.95);
+  &:active {
+    filter: brightness(0.97);
   }
 
   // colors

@@ -1,0 +1,17 @@
+app-mh-button {
+  display: flex;
+  margin: 2rem;
+  width: 200px;
+}
+
+.brochure {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem;
+  justify-content: center;
+
+  pre {
+    white-space: break-spaces;
+    overflow-wrap: anywhere;
+  }
+}

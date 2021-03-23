@@ -2,6 +2,7 @@
 @import "colors";
 
 :root {
+  color: $color-black;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -11,10 +12,20 @@ body {
   height: 100%;
   margin: 0;
 
-  .container {
+  *,
+  *:focus,
+  *:hover {
+    outline: none;
+  }
+
+  .mh-flex {
     display: flex;
-    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .container {
     margin: 0 auto;
     max-width: 1280px !important;
+    overflow: auto;
   }
 }

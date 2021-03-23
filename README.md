@@ -18,3 +18,7 @@ The list items should be responsive.
 The user should be able to sort and filter the list by price.
 
 Create a git repository for your project and send a link
+
+## Do check out my personal website
+
+[abelhii.com](https://abelhii.com)
