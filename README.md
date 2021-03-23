@@ -1,4 +1,6 @@
-# MyhomeList
+# MyhomeList 
+
+[myhome.abelhii.com](https://myhome-list.web.app/properties)
 
 Build an Angular application to display a list of properties from the json file. The list items should show the following data:
 
@@ -19,6 +21,6 @@ The user should be able to sort and filter the list by price.
 
 Create a git repository for your project and send a link
 
-## Do check out my personal website
+## Do check out my personal website as well
 
 [abelhii.com](https://abelhii.com)
