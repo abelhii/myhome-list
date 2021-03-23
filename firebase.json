@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "myhome-list",
+    "public": "dist/myhome-list",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

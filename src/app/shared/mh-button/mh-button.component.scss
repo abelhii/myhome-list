@@ -11,6 +11,9 @@
   background-color: $color-primary;
   font-size: 12px;
 
+  -webkit-user-select: none;
+  user-select: none;
+
   &:hover {
     cursor: pointer;
     filter: brightness(1.03);

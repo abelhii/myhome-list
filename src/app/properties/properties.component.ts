@@ -60,12 +60,12 @@ export class PropertiesComponent implements OnInit {
    * Filter properties
    */
   filterList() {
+    this.filteredList = this.properties.slice();
+
     if (this.minPrice != 0 || this.maxPrice != 0) {
       this.filteredList = this.properties.filter((p) => {
         return p.Price >= this.minPrice && p.Price <= this.maxPrice;
       });
-    } else {
-      this.filteredList = this.properties.slice();
     }
   }
 
