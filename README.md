@@ -1,6 +1,10 @@
 # MyhomeList 
 
-[myhome.abelhii.com](https://myhome-list.web.app/properties)
+[myhome.abelhii.com](https://myhome.abelhii.com/properties)
+
+This is a technical test for the **Angular Front End Developer** position at myhome.ie.
+
+## The Brief
 
 Build an Angular application to display a list of properties from the json file. The list items should show the following data:
 
